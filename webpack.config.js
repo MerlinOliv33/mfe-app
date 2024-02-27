@@ -10,7 +10,7 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: "mfeApp",
+    uniqueName: "remoteApp",
     publicPath: "auto",
     scriptType: "text/javascript"
   },
@@ -27,12 +27,14 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
 
         // For remotes (please adjust)
-        name: "mfeApp",
+        name: "remoteApp",
         filename: "remoteEntry.js",
-        exposes: {'CounterModule': './src/app/counter/counter.module.ts' },     
+        exposes: {
+            './CounterModule': './/src/app/counter/counter.module.ts',
+            // './CounterComp': ".//src/counter.comp.ts"
+        },        
         
         // For hosts (please adjust)
         // remotes: {

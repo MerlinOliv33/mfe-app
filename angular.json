@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"mfe-app": {
+		"remote-app": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -17,7 +17,7 @@
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
-						"outputPath": "dist/mfe-app",
+						"outputPath": "dist/remote-app",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": [
@@ -68,11 +68,11 @@
 					"builder": "ngx-build-plus:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "mfe-app:build:production",
+							"browserTarget": "remote-app:build:production",
 							"extraWebpackConfig": "webpack.prod.config.js"
 						},
 						"development": {
-							"browserTarget": "mfe-app:build:development"
+							"browserTarget": "remote-app:build:development"
 						}
 					},
 					"defaultConfiguration": "development",
@@ -85,7 +85,7 @@
 				"extract-i18n": {
 					"builder": "ngx-build-plus:extract-i18n",
 					"options": {
-						"browserTarget": "mfe-app:build",
+						"browserTarget": "remote-app:build",
 						"extraWebpackConfig": "webpack.config.js"
 					}
 				},
@@ -110,8 +110,8 @@
 				}
 			}
 		}
-	},
-	"cli": {
-		"analytics": false
-	}
+  },
+  "cli": {
+    "analytics": false
+  }
 }

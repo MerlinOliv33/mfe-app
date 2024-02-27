@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -7,14 +7,31 @@ import { Component } from '@angular/core';
 })
 export class CounterComponent {
 
-  itemCount = 0;
-
-  increment(): void {
-    this.itemCount++;
+  @HostListener("document:Ajoutpanier", ["$event"])
+  incrementCounter(event: any) {
+    this.increment();
   }
 
-  decrement(): void {
-    this.itemCount--;
+  @HostListener("document:Suppanier", ["$event"])
+  decrementCounter(event: any) {
+    this.decrement();
+  }
+
+  public counter: number = 1;
+
+  increment() {
+    this.counter++;
+  }
+
+  decrement() {
+    if (this.counter > 1) {
+      this.counter--;
+    }
+  }
+
+  emettre($event: any): void {
+    const event: CustomEvent = new CustomEvent('echange', { detail: $event?.target?.value } );
+    document.dispatchEvent(event);
   }
 
 }
