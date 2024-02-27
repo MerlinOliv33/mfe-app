@@ -1,0 +1,17 @@
+<!-- counter.component.html -->
+<div class="container mt-3">
+    <div class="card">
+      <div class="card-header">
+        Mon Panier
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Article Factice</h5>
+        <p class="card-text">Description de l'article factice.</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <button (click)="decrement()" class="btn btn-danger">-</button>
+          <span>{{ itemCount }}</span>
+          <button (click)="increment()" class="btn btn-success">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
