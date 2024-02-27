@@ -12,7 +12,7 @@ module.exports = {
   output: {
     uniqueName: "mfeApp",
     publicPath: "auto",
-    scriptType: "text/javascript"
+    scriptType: "module"
   },
   optimization: {
     runtimeChunk: false
@@ -32,7 +32,7 @@ module.exports = {
         // For remotes (please adjust)
         name: "mfeApp",
         filename: "remoteEntry.js",
-        exposes: {'CounterModule': './src/app/counter/counter.module.ts' },     
+        exposes: { './CounterModule': './src/app/counter/counter.module.ts' },
         
         // For hosts (please adjust)
         // remotes: {
